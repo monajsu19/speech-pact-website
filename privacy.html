@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Speech Pact</title>
+  <meta name="description" content="How Speech Pact collects, uses, and protects your information." />
+  <link rel="icon" href="assets/favicon.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html">
+        <img src="assets/icon.png" alt="Speech Pact logo" />
+        Speech Pact
+      </a>
+      <nav class="nav-links">
+        <a href="index.html#features" class="nav-hide">Features</a>
+        <a href="index.html#pricing" class="nav-hide">Pricing</a>
+        <a href="index.html" class="btn btn-ghost btn-sm">Back to home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page hero -->
+    <section class="page-hero">
+      <div class="wrap">
+        <h1>Privacy Policy</h1>
+        <p>What information Speech Pact collects, how we use it, and the choices you have.</p>
+      </div>
+    </section>
+
+    <section style="padding-top:8px;">
+      <div class="wrap">
+        <div class="legal">
+          <p class="effective">Effective May 4, 2026</p>
+
+          <p>
+            This Privacy Policy explains what information Speech Pact ("we", "us") collects when you use the Speech
+            Pact mobile application (the "App"), how we use it, and the choices you have. By using the App you agree
+            to the practices described here. If you do not agree, please do not use the App.
+          </p>
+
+          <h2>1. Information We Collect</h2>
+          <p>We only collect what we need to run the App and give you useful feedback.</p>
+          <ul>
+            <li><strong>Account information.</strong> Email address, password (hashed), and display name. If you sign in with Google, we receive your email and name from Google.</li>
+            <li><strong>Speech recordings and transcripts.</strong> The audio you record, the transcript generated from it, and the AI-generated feedback (score, filler-word count, awkward-pause count, words per minute, transcript markers, coaching cards, structure analysis, scorecard).</li>
+            <li><strong>Practice activity.</strong> Topics chosen, durations selected, recording timestamps, streaks, and progress data.</li>
+            <li><strong>Subscription information.</strong> Subscription state, plan, and renewal status synced from Apple via RevenueCat. We never see your full payment-card details — Apple handles payment.</li>
+            <li><strong>Notifications.</strong> A push-notification token (Apple Push Notification Service) and your notification preferences if you enable reminders.</li>
+            <li><strong>Device &amp; technical data.</strong> Limited information needed to operate and secure the service: IP address (used for rate-limiting and abuse prevention), device model, OS version, App version, and crash logs.</li>
+            <li><strong>Community content.</strong> If you participate in challenges or peer feedback, the comments, ratings, and chat messages you send through Stream Chat.</li>
+          </ul>
+          <p>We do not collect precise location, contacts, photos, health data, or any information not listed above.</p>
+
+          <h2>2. How We Use Your Information</h2>
+          <ul>
+            <li>Operate the App, sign you in, sync your data across devices, and remember your preferences.</li>
+            <li>Transcribe your speech and produce AI feedback (this is the core feature you signed up for).</li>
+            <li>Track streaks, progress, and personal best scores.</li>
+            <li>Process subscriptions and entitlements through Apple and RevenueCat.</li>
+            <li>Send the practice reminders and notifications you've enabled.</li>
+            <li>Prevent abuse — for example, rate-limiting analysis requests by IP and account.</li>
+            <li>Diagnose crashes, fix bugs, and improve the App. We do not use your audio recordings or transcripts to train third-party AI models.</li>
+            <li>Comply with legal obligations and enforce our Terms.</li>
+          </ul>
+
+          <h2>3. AI Speech Analysis</h2>
+          <p>
+            When you tap "Analyse Speech," your audio recording is sent to our Supabase Edge Function and from there
+            to AI providers acting as our processors:
+          </p>
+          <ul>
+            <li><strong>Deepgram</strong> — primary speech-to-text transcription.</li>
+            <li><strong>OpenAI</strong> — fallback transcription (Whisper) and fallback written-feedback generation if our primary providers are unavailable.</li>
+            <li><strong>Google (Gemini)</strong> — analysis of the transcript to produce coaching feedback.</li>
+          </ul>
+          <p>
+            Each provider receives only what they need — the audio bytes (Deepgram/OpenAI) or the transcript and
+            speech metrics (Gemini/OpenAI). We do not attach your name or email to those requests. These providers
+            process the data on our behalf under their respective enterprise agreements and do not use your content
+            to train their general-purpose models.
+          </p>
+          <p>
+            AI feedback is generated automatically and may be inaccurate. It is for practice and self-improvement
+            and is not professional speech, language, or medical advice.
+          </p>
+
+          <h2>4. How We Store and Protect Your Data</h2>
+          <p>
+            Account data, recording metadata, and feedback are stored in our Supabase (Postgres) database. Audio
+            files are stored in private Supabase Storage buckets and accessed only through short-lived signed URLs
+            tied to your account.
+          </p>
+          <ul>
+            <li>Data is encrypted in transit (HTTPS/TLS) and at rest.</li>
+            <li>Row-level security policies in our database restrict each row to the account that owns it; you cannot read or modify another user's recordings or feedback.</li>
+            <li>Authentication is handled by Supabase Auth. Passwords are stored hashed; we never see them in plaintext.</li>
+          </ul>
+          <p>
+            No system is perfectly secure. If we become aware of a breach affecting your data, we will notify you as
+            required by applicable law.
+          </p>
+
+          <h2>5. Service Providers</h2>
+          <p>We share data only with vendors we rely on to run the App. Each acts as our processor:</p>
+          <ul>
+            <li><strong>Supabase</strong> — database, authentication, file storage, and serverless functions.</li>
+            <li><strong>Deepgram, OpenAI, Google Gemini</strong> — speech-to-text and AI analysis (see Section 3).</li>
+            <li><strong>Apple App Store &amp; RevenueCat</strong> — subscription billing and entitlement sync.</li>
+            <li><strong>Stream Chat</strong> — chat features inside community challenges.</li>
+            <li><strong>Resend</strong> — sends one-time-passcode (OTP) verification emails.</li>
+            <li><strong>Apple Push Notification Service &amp; Expo</strong> — delivers reminders and notifications you have enabled.</li>
+          </ul>
+          <p>We do not sell your personal information, and we do not share it with advertising networks or data brokers.</p>
+
+          <h2>6. Sharing Inside the App</h2>
+          <p>
+            If you join a community challenge or send peer feedback, your display name and the content you post
+            (ratings, written feedback, chat messages) are visible to other members of that challenge. Your
+            recordings are only shared with another member if you explicitly submit them to a challenge that
+            requires it. Your email and account settings are never shown to other users.
+          </p>
+
+          <h2>7. International Transfers</h2>
+          <p>
+            Speech Pact and our processors operate primarily in the United States. If you use the App from outside
+            the U.S., your information will be transferred to and processed in the U.S. and other countries where
+            our processors operate. Where required, we rely on standard contractual clauses or equivalent safeguards
+            for such transfers.
+          </p>
+
+          <h2>8. Data Retention</h2>
+          <p>
+            We keep your account and content for as long as your account is active. When you delete your account, we
+            remove your profile, recordings, transcripts, feedback, and related data from our active systems.
+            Limited backups and rate-limiting / abuse-prevention logs may persist for a short retention window
+            before being purged. Some records may be kept longer where required by law or to resolve disputes.
+          </p>
+
+          <h2>9. Your Rights &amp; Choices</h2>
+          <ul>
+            <li><strong>Access &amp; correction.</strong> You can view and edit your profile from the Account settings inside the App.</li>
+            <li><strong>Deletion.</strong> Delete your account from Settings or by emailing <a href="mailto:speechpact@gmail.com">speechpact@gmail.com</a>. This removes your data as described in Section 8.</li>
+            <li><strong>Notifications.</strong> Toggle reminders in Settings → Notifications, or disable them at the OS level.</li>
+            <li><strong>Microphone permission.</strong> You can revoke microphone access in iOS Settings at any time. Without it, the App cannot record or analyze speech.</li>
+            <li><strong>Data export.</strong> Email <a href="mailto:speechpact@gmail.com">speechpact@gmail.com</a> and we will provide a copy of your account data in a machine-readable format.</li>
+          </ul>
+          <p>
+            Depending on where you live, you may have additional rights (such as those under GDPR or the CCPA),
+            including the right to object to processing, request restriction, or lodge a complaint with a
+            supervisory authority. Contact us to exercise any of these rights.
+          </p>
+
+          <h2>10. Children's Privacy</h2>
+          <p>
+            Speech Pact is not directed at children under 13, and we do not knowingly collect personal information
+            from anyone under 13. If you believe a child under 13 has provided us information, contact
+            <a href="mailto:speechpact@gmail.com">speechpact@gmail.com</a> and we will delete it.
+          </p>
+
+          <h2>11. Analytics &amp; Tracking</h2>
+          <p>
+            The App does not use third-party advertising trackers, and we do not show ads. We collect only the
+            limited diagnostic information described in Section 1 to keep the service running and reliable.
+          </p>
+
+          <h2>12. Changes to This Policy</h2>
+          <p>
+            We may update this Privacy Policy from time to time. If changes are material, we will notify you in the
+            App or by email before they take effect. Your continued use of the App after the effective date means
+            you accept the updated policy.
+          </p>
+
+          <h2>13. Contact</h2>
+          <p>
+            Questions, requests, or privacy concerns? Email us at
+            <a href="mailto:speechpact@gmail.com">speechpact@gmail.com</a>. We are a small indie team and will
+            respond as soon as we can.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <a class="brand" href="index.html">
+        <img src="assets/icon.png" alt="Speech Pact logo" />
+        Speech Pact
+      </a>
+      <nav class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="mailto:speechpact@gmail.com">Contact</a>
+      </nav>
+      <div class="muted">© 2026 Speech Pact. All rights reserved.</div>
+    </div>
+  </footer>
+
+</body>
+</html>

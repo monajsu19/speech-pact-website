@@ -355,6 +355,35 @@ section { padding: 64px 0; scroll-margin-top: 68px; }
 .support-card p { margin: 0 0 18px; color: var(--ink-2); }
 .support-email { font-size: 18px; font-weight: 700; color: var(--green); }
 
+/* ---------- Auth forms (reset password) ---------- */
+.auth-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 32px;
+  box-shadow: 0 4px 14px var(--shadow-soft);
+  max-width: 420px;
+  margin: 0 auto 48px;
+}
+.auth-card .state-icon { font-size: 32px; text-align: center; margin-bottom: 10px; }
+.auth-card h3 { margin: 0 0 6px; font-size: 20px; text-align: center; }
+.auth-card > p { margin: 0 0 22px; color: var(--ink-2); text-align: center; }
+.field { margin-bottom: 16px; }
+.field label { display: block; font-size: 13px; font-weight: 600; color: var(--ink-2); margin-bottom: 6px; }
+.field input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: var(--white);
+  font-size: 15px;
+  font-family: var(--font);
+  color: var(--ink);
+}
+.field input:focus { outline: none; border-color: var(--green); }
+.form-error { color: var(--terracotta); font-size: 14px; margin: 4px 0 14px; min-height: 20px; }
+.auth-card .btn { width: 100%; }
+
 .faq { max-width: 760px; margin: 0 auto; }
 .faq details {
   background: var(--card);

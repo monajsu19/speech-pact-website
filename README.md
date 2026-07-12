@@ -4,7 +4,7 @@ Marketing and support site for the **Speech Pact** app — your pocket speech co
 
 ## Pages
 - `index.html` — marketing landing page
-- `support.html` — support page (FAQ + contact: speechpact@gmail.com)
+- `support.html` — support page (FAQ + contact: support@speechpact.com)
 
 ## Stack
 Plain static HTML + CSS — no build step. Styling lives in `styles.css`; brand assets (icon, mascot, illustrations) are in `assets/`. The palette mirrors the app's design system.
